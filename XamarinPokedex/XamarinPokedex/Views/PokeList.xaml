@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinPokedex.Views.PokeList">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" BackgroundColor="Beige">
+                <Button Text="Précedent" HorizontalOptions="Start" Command="{Binding GoPrevious}" IsEnabled="{Binding CanPrevious}"></Button>
+                <Label Text="Navigation" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" HorizontalOptions="FillAndExpand"></Label>
+                <Button Text="Suivant" HorizontalOptions="End" Command="{Binding GoNext}" IsEnabled="{Binding CanNext}"></Button>
+            </StackLayout>
+            <ListView  ItemsSource="{Binding PokeList}"
+                       SelectedItem="{Binding SelectedPoke}">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell >
+                            <StackLayout>
+                                <Label Text="{Binding Name}" HorizontalTextAlignment="Center" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

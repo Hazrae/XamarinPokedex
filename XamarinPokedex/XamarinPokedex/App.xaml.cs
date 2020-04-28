@@ -13,8 +13,8 @@ namespace XamarinPokedex
         {
             InitializeComponent();
             DependencyService.Register<PokemonService>();
-            DependencyService.Register<IHttpController, HttpController>();       
-            MainPage = new MainPage();
+            DependencyService.Register<IHttpController, HttpController>();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

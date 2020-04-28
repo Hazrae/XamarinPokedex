@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinPokedex.Views.PokemonDetail">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BindingContext="{Binding PokeFull}">
+                <Label Text="{Binding Name}" HorizontalTextAlignment="Center"></Label>
+                <StackLayout BindingContext="{Binding Sprites}">
+                    <Image Source="{Binding Front_Default}" HorizontalOptions="Center"></Image>
+                    <Image Source="{Binding Back_Default}" HorizontalOptions="Center"></Image>
+                </StackLayout>            
+            </StackLayout>
+            <Button Text="Retour" Command="{Binding Retour}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
